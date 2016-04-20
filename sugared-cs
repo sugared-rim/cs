@@ -1,0 +1,41 @@
+#!/usr/bin/env php
+<?php
+
+use Schnittstabil\Sugared\PhpCsFixer\Console\Application as PhpCsFixer;
+use Schnittstabil\Sugared\PHPMD\TextUI\Application as PHPMD;
+
+set_error_handler(function ($severity, $message, $file, $line) {
+    if ($severity & error_reporting()) {
+        throw new ErrorException($message, 0, $severity, $file, $line);
+    }
+});
+
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('UTC');
+}
+
+foreach ([
+    __DIR__.'/../../autoload.php',
+    __DIR__.'/../vendor/autoload.php',
+    __DIR__.'/vendor/autoload.php',
+    ] as $file) {
+    if (file_exists($file)) {
+        require $file;
+        break;
+    }
+}
+
+unset($file);
+
+if ($exitCode = (new PHPMD())->main($_SERVER['argv'])) {
+    exit($exitCode);
+}
+
+$phpCsFixer = new PhpCsFixer();
+$phpCsFixer->setAutoExit(false);
+if ($exitCode = $phpCsFixer->run()) {
+    exit($exitCode);
+}
+
+// hard coded `exit()` in `runphpcs` - :unamused:
+(new Schnittstabil\Sugared\PHP\CodeSniffer\CLI())->runphpcs();

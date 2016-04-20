@@ -1,0 +1,50 @@
+{
+    "name": "schnittstabil/sugared-cs",
+    "type": "library",
+    "description": "Bunch of PHP codestyle linters sweetened with ease",
+    "license": "MIT",
+    "keywords": ["sugared", "preconfigured", "php-cs-fixer", "php_codesniffer", "phpmd", "phpcs", "standards", "cs", "lint", "mess detection", "mess detector"],
+    "authors": [
+        {
+            "name": "Michael Mayer",
+            "email": "michael@schnittstabil.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Schnittstabil\\Sugared\\PhpCsFixer\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Schnittstabil\\Sugared\\PhpCsFixer\\": "tests" }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "schnittstabil/sugared-phpmd": "^0.2",
+        "schnittstabil/sugared-php-cs-fixer": "^0.1",
+        "schnittstabil/sugared-php_codesniffer": "^0.2"
+    },
+    "extra": {
+        "schnittstabil\/sugared-php_codesniffer": {
+            "files": "sugared-cs"
+        },
+        "schnittstabil\/sugared-php-cs-fixer": {
+            "path": "sugared-cs"
+        },
+        "schnittstabil\/sugared-phpmd": {
+            "inputPath": "sugared-cs"
+        }
+    },
+    "bin": [
+        "sugared-cs"
+    ],
+    "scripts": {
+        "lint": [
+            "sugared-phpcs",
+            "sugared-phpmd",
+            "sugared-php-cs-fixer"
+        ],
+        "test": [
+            "composer lint",
+            "./sugared-cs"
+        ]
+    }
+}

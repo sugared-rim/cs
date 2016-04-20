@@ -1,0 +1,16 @@
+engines:
+  fixme:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+  phpmd:
+    enabled: true
+ratings:
+   paths:
+   - "src/**/*"
+   - "**.php"
+   - "**.module"
+   - "**.inc"
+   - "sugared-cs"
+exclude_paths:
+- "tests/**/*"
