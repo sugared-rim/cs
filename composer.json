@@ -18,18 +18,18 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "schnittstabil/sugared-phpmd": "^0.2",
-        "schnittstabil/sugared-php-cs-fixer": "^0.1",
-        "schnittstabil/sugared-php_codesniffer": "^0.2"
+        "schnittstabil/sugared-phpmd": "^1.0",
+        "schnittstabil/sugared-php-cs-fixer": "^1.0",
+        "schnittstabil/sugared-php_codesniffer": "^1.0"
     },
     "extra": {
-        "schnittstabil\/sugared-php_codesniffer": {
+        "schnittstabil/sugared-php_codesniffer": {
             "files": "sugared-cs"
         },
-        "schnittstabil\/sugared-php-cs-fixer": {
+        "schnittstabil/sugared-php-cs-fixer": {
             "path": "sugared-cs"
         },
-        "schnittstabil\/sugared-phpmd": {
+        "schnittstabil/sugared-phpmd": {
             "inputPath": "sugared-cs"
         }
     },
