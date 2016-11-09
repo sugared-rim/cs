@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-use Schnittstabil\Sugared\PhpCsFixer\Console\Application as PhpCsFixer;
-use Schnittstabil\Sugared\PHPMD\TextUI\Application as PHPMD;
+use SugaredRim\PhpCsFixer\Console\Application as PhpCsFixer;
+use SugaredRim\PHPMD\TextUI\Application as PHPMD;
 
 set_error_handler(function ($severity, $message, $file, $line) {
     if ($severity & error_reporting()) {
@@ -38,4 +38,4 @@ if ($exitCode = $phpCsFixer->run()) {
 }
 
 // hard coded `exit()` in `runphpcs` - :unamused:
-(new Schnittstabil\Sugared\PHP\CodeSniffer\CLI())->runphpcs();
+(new SugaredRim\PHP\CodeSniffer\CLI())->runphpcs();

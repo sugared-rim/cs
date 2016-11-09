@@ -11,6 +11,6 @@ ratings:
    - "**.php"
    - "**.module"
    - "**.inc"
-   - "sugared-cs"
+   - "sugared-rim-cs"
 exclude_paths:
 - "tests/**/*"

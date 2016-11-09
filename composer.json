@@ -1,9 +1,9 @@
 {
-    "name": "schnittstabil/sugared-cs",
+    "name": "sugared-rim/cs",
     "type": "library",
     "description": "Bunch of PHP codestyle linters sweetened with ease",
     "license": "MIT",
-    "keywords": ["sugared", "preconfigured", "php-cs-fixer", "php_codesniffer", "phpmd", "phpcs", "standards", "cs", "lint", "mess detection", "mess detector"],
+    "keywords": ["sugared", "preconfigured", "php-cs-fixer", "php_codesniffer", "phpmd", "phpcs", "standards", "cs", "lint", "mess detection", "mess detector", "sugared-rim"],
     "authors": [
         {
             "name": "Michael Mayer",
@@ -11,40 +11,40 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Schnittstabil\\Sugared\\PhpCsFixer\\": "src" }
+        "psr-4": { "SugaredRim\\PhpCsFixer\\": "src" }
     },
     "autoload-dev": {
-        "psr-4": { "Schnittstabil\\Sugared\\PhpCsFixer\\": "tests" }
+        "psr-4": { "SugaredRim\\PhpCsFixer\\": "tests" }
     },
     "require": {
         "php": ">=5.6.0",
-        "schnittstabil/sugared-phpmd": "^1.0",
-        "schnittstabil/sugared-php-cs-fixer": "^1.0",
-        "schnittstabil/sugared-php_codesniffer": "^1.0"
+        "sugared-rim/phpmd": "^2.0",
+        "sugared-rim/php-cs-fixer": "^2.0",
+        "sugared-rim/php_codesniffer": "^2.0"
     },
     "extra": {
-        "schnittstabil/sugared-php_codesniffer": {
-            "files": "sugared-cs"
+        "sugared-rim/php_codesniffer": {
+            "files": "sugared-rim-cs"
         },
-        "schnittstabil/sugared-php-cs-fixer": {
-            "path": "sugared-cs"
+        "sugared-rim/php-cs-fixer": {
+            "path": "sugared-rim-cs"
         },
-        "schnittstabil/sugared-phpmd": {
-            "inputPath": "sugared-cs"
+        "sugared-rim/phpmd": {
+            "inputPath": "sugared-rim-cs"
         }
     },
     "bin": [
-        "sugared-cs"
+        "sugared-rim-cs"
     ],
     "scripts": {
         "lint": [
-            "sugared-phpcs",
-            "sugared-phpmd",
-            "sugared-php-cs-fixer"
+            "sugared-rim-phpcs",
+            "sugared-rim-phpmd",
+            "sugared-rim-php-cs-fixer"
         ],
         "test": [
             "composer lint",
-            "./sugared-cs"
+            "./sugared-rim-cs"
         ]
     }
 }
